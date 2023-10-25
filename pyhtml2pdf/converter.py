@@ -84,6 +84,7 @@ def __get_pdf_from_html(
         WebDriverWait(driver, timeout).until(
             staleness_of(driver.find_element(by=By.TAG_NAME, value="html"))
         )
+        driver.quit()
     except TimeoutException:
         calculated_print_options = {
             "landscape": False,
